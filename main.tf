@@ -55,3 +55,18 @@ resource "azurerm_subnet" "subnet-windows-fayaz" {
 }
 
 
+
+############# Creating  Public IP ####################
+
+
+resource "azurerm_public_ip" "public-iP" {
+  count               = 4
+  name                = var.azurerm_public_ip[count.index]
+  resource_group_name = azurerm_resource_group.fayaz-rsg-test.name
+  location            = azurerm_resource_group.fayaz-rsg-test.location
+  allocation_method   = "Dynamic"
+
+  tags = {
+    environment = "Production"
+  }
+}
