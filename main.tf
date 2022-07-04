@@ -1,6 +1,6 @@
 provider "azurerm" {
 
-  
+  features {}
 }
 
 ########## Resource Group Creation ###################
@@ -53,3 +53,5 @@ resource "azurerm_subnet" "subnet-windows-fayaz" {
   virtual_network_name = azurerm_virtual_network.fayaz-virtual_network_name.name
 
 }
+
+
